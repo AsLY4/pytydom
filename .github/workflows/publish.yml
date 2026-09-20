@@ -10,6 +10,7 @@ jobs:
     environment: pypi
     permissions:
       id-token: write # PyPI trusted publishing (OIDC) — no token secret
+      contents: read # checkout needs read access (private repo; a permissions block zeroes the rest)
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
